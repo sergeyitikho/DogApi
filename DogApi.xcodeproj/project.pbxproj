@@ -13,6 +13,7 @@
 		7FB21B0F2AFE3E740001E074 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB21B0D2AFE3E740001E074 /* Main.storyboard */; };
 		7FB21B112AFE3E750001E074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB21B102AFE3E750001E074 /* Assets.xcassets */; };
 		7FB21B142AFE3E750001E074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB21B122AFE3E750001E074 /* LaunchScreen.storyboard */; };
+		7FB21B1D2AFE3E8D0001E074 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB21B1C2AFE3E8D0001E074 /* Dog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7FB21B102AFE3E750001E074 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7FB21B132AFE3E750001E074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FB21B152AFE3E750001E074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FB21B1C2AFE3E8D0001E074 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,56 @@
 		7FB21B062AFE3E740001E074 /* DogApi */ = {
 			isa = PBXGroup;
 			children = (
-				7FB21B072AFE3E740001E074 /* AppDelegate.swift */,
-				7FB21B092AFE3E740001E074 /* SceneDelegate.swift */,
-				7FB21B0B2AFE3E740001E074 /* ViewController.swift */,
-				7FB21B0D2AFE3E740001E074 /* Main.storyboard */,
-				7FB21B102AFE3E750001E074 /* Assets.xcassets */,
-				7FB21B122AFE3E750001E074 /* LaunchScreen.storyboard */,
-				7FB21B152AFE3E750001E074 /* Info.plist */,
+				7FB21B212AFE42F00001E074 /* SupportingFiles */,
+				7FB21B202AFE42E20001E074 /* Resources */,
+				7FB21B1F2AFE42AE0001E074 /* Storyboards */,
+				7FB21B1E2AFE426A0001E074 /* ViewControllers */,
+				7FB21B1B2AFE3E7E0001E074 /* Models */,
 			);
 			path = DogApi;
+			sourceTree = "<group>";
+		};
+		7FB21B1B2AFE3E7E0001E074 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7FB21B1C2AFE3E8D0001E074 /* Dog.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7FB21B1E2AFE426A0001E074 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7FB21B0B2AFE3E740001E074 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7FB21B1F2AFE42AE0001E074 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7FB21B0D2AFE3E740001E074 /* Main.storyboard */,
+				7FB21B122AFE3E750001E074 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7FB21B202AFE42E20001E074 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7FB21B102AFE3E750001E074 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7FB21B212AFE42F00001E074 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7FB21B072AFE3E740001E074 /* AppDelegate.swift */,
+				7FB21B092AFE3E740001E074 /* SceneDelegate.swift */,
+				7FB21B152AFE3E750001E074 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +183,7 @@
 			files = (
 				7FB21B0C2AFE3E740001E074 /* ViewController.swift in Sources */,
 				7FB21B082AFE3E740001E074 /* AppDelegate.swift in Sources */,
+				7FB21B1D2AFE3E8D0001E074 /* Dog.swift in Sources */,
 				7FB21B0A2AFE3E740001E074 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,12 +337,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DogApi/Info.plist;
+				INFOPLIST_FILE = DogApi/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +350,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.swiftbook.com.DogApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,12 +367,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DogApi/Info.plist;
+				INFOPLIST_FILE = DogApi/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +380,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.swiftbook.com.DogApi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
