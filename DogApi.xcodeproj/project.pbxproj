@@ -14,6 +14,7 @@
 		7FB21B112AFE3E750001E074 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FB21B102AFE3E750001E074 /* Assets.xcassets */; };
 		7FB21B142AFE3E750001E074 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7FB21B122AFE3E750001E074 /* LaunchScreen.storyboard */; };
 		7FB21B1D2AFE3E8D0001E074 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FB21B1C2AFE3E8D0001E074 /* Dog.swift */; };
+		7FD4B0D42B0536E500B4CA13 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4B0D32B0536E500B4CA13 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7FB21B132AFE3E750001E074 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7FB21B152AFE3E750001E074 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FB21B1C2AFE3E8D0001E074 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		7FD4B0D32B0536E500B4CA13 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		7FB21B062AFE3E740001E074 /* DogApi */ = {
 			isa = PBXGroup;
 			children = (
+				7FD4B0D22B052A9900B4CA13 /* Services */,
 				7FB21B212AFE42F00001E074 /* SupportingFiles */,
 				7FB21B202AFE42E20001E074 /* Resources */,
 				7FB21B1F2AFE42AE0001E074 /* Storyboards */,
@@ -108,6 +111,14 @@
 				7FB21B152AFE3E750001E074 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		7FD4B0D22B052A9900B4CA13 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7FD4B0D32B0536E500B4CA13 /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 			files = (
 				7FB21B0C2AFE3E740001E074 /* ViewController.swift in Sources */,
 				7FB21B082AFE3E740001E074 /* AppDelegate.swift in Sources */,
+				7FD4B0D42B0536E500B4CA13 /* NetworkManager.swift in Sources */,
 				7FB21B1D2AFE3E8D0001E074 /* Dog.swift in Sources */,
 				7FB21B0A2AFE3E740001E074 /* SceneDelegate.swift in Sources */,
 			);

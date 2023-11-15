@@ -8,6 +8,6 @@
 import Foundation
 
 struct Dog: Decodable {
-    let fileSizeBytes: Int
-    let url: String
+    let message: String
+    let status: String
 }
