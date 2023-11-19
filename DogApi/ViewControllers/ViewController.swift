@@ -36,18 +36,26 @@ final class ViewController: UIViewController {
                 case .success(let value):
                     guard let dogsData = value as? [String: Any] else { return }
                     guard let imageUrl = URL(string: Dog(dogsData: dogsData).message) else { return }
-                    URLSession.shared.dataTask(with: imageUrl) { imageData, _, _ in
-                        if let imageData = imageData, let image = UIImage(data: imageData) {
-                            DispatchQueue.main.async {
-                                self.dogImageView.image = image
-                            }
-                        }
-                    }.resume()
-                    print(Dog(dogsData: dogsData).message)
+                    self.downloadImage(from: imageUrl, to: self.dogImageView)
+                    print(Dog(dogsData: dogsData))
                 case .failure(let error):
                     print(error)
                 }
             }
     }
+    
+    private func downloadImage(from url: URL, to imageView: UIImageView) {
+        AF.request(url).responseData { response in
+            switch response.result {
+            case .success(let imageData):
+                if let image = UIImage(data: imageData) {
+                    imageView.image = image
+                }
+            case .failure(let error):
+                print("Error downloading image: \(error)")
+            }
+        }
+    }
+
 }
 
