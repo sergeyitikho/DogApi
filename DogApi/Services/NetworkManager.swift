@@ -17,31 +17,36 @@ enum Link {
         }
     }
 }
+enum FetchError: Error {
+    case noData
+    case invalidURL
+    case decodingError
+}
 final class NetworkManager {
     static let shared = NetworkManager()
     private init() {}
-    func fetchDogImage(from url: URL, to image: UIImageView) {
+    func fetchImage<T: Decodable>(from url: URL, to imageView: UIImageView, completion: @escaping (Result<T, Error>) -> Void) {
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
-                print(error?.localizedDescription ?? "no error description")
+                completion(.failure(FetchError.noData))
                 return
             }
             do {
-                let jsonDecoder = JSONDecoder()
-                let dog = try jsonDecoder.decode(Dog.self, from: data)
-                guard let imageUrl = URL(string: dog.message) else {
-                    print("Invalid image URL")
-                    return
-                }
-                URLSession.shared.dataTask(with: imageUrl) { imageData, _, _ in
-                    if let imageData = imageData {
-                        DispatchQueue.main.async {
-                            image.image = UIImage(data: imageData)
+                let decodedData = try JSONDecoder().decode(T.self, from: data)
+                if let imageUrlString = (decodedData as? Dog)?.message, let imageUrl = URL(string: imageUrlString) {
+                    URLSession.shared.dataTask(with: imageUrl) { imageData, _, _ in
+                        if let imageData = imageData, let image = UIImage(data: imageData) {
+                            DispatchQueue.main.async {
+                                imageView.image = image
+                                completion(.success(decodedData))
+                            }
                         }
-                    }
-                }.resume()
+                    }.resume()
+                } else {
+                    completion(.failure(FetchError.invalidURL))
+                }
             } catch {
-                print(error.localizedDescription)
+                completion(.failure(FetchError.decodingError))
             }
         }.resume()
     }
